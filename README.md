@@ -9,6 +9,7 @@ $ make
 $ make run
 ```
 **output picture file will be GaussianBlur.bmp** 
+
 ---
 ### Part 2 - hw1_2
 ```
