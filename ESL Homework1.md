@@ -59,11 +59,11 @@ const double mask[MASK_N][MASK_X][MASK_Y] = {{{0.0, 0.0, 0.0}, {0.0, 1.0, 0.0}, 
 
 ---
 
-![ **Original**  ](https://raw.githubusercontent.com/nthu110061637/ESL_HomeWork1/main/hw1_1/build/origin.bmp)
+![https://raw.githubusercontent.com/nthu110061637/ESL_HomeWork1/main/hw1_1/build/origin.bmp](https://raw.githubusercontent.com/nthu110061637/ESL_HomeWork1/main/hw1_1/build/origin.bmp)
 
- **Original**  
+![https://raw.githubusercontent.com/nthu110061637/ESL_HomeWork1/main/hw1_1/build/GaussianBlur.bmp](https://raw.githubusercontent.com/nthu110061637/ESL_HomeWork1/main/hw1_1/build/GaussianBlur.bmp)
 
-![**After**](https://raw.githubusercontent.com/nthu110061637/ESL_HomeWork1/main/hw1_1/build/GaussianBlur.bmp)
+**Original**
 
 **After**
 
