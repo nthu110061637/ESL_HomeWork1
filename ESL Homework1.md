@@ -88,7 +88,8 @@ sc_fifo_out<int> o_result [256];
 - I use **“pixel”** array with the size of **[3][258]**. Using the number of 258 is to do padding.
 - And I push the second row to the first row and the third row to the second row then I read the data through the testbench output fifo to the third row.
 - If there’s two rows have been read into the “pixel” array (i.e. row buffer), the thread “row_buffer” will call the function “do_filter” to do the computation then return the result to testbench.
-
+- The data structure of **do_filter** is the picture below to multiply and add 9 pixels from row buffer and the Gaussian Blur mask.
+![ **Concept**  ](https://raw.githubusercontent.com/nthu110061637/ESL_HomeWork1/main/concept.jpg)
 ## Result : Part 2 - hw1_2
 
 ---
