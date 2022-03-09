@@ -92,11 +92,11 @@ sc_fifo_out<int> o_result [256];
 ## Result : Part 2 - hw1_2
 
 ---
-![ **Original**  ](https://raw.githubusercontent.com/nthu110061637/ESL_HomeWork1/main/hw1_1/build/origin.bmp)
+![ **Original**  ](https://raw.githubusercontent.com/nthu110061637/ESL_HomeWork1/main/hw1_2/build/originrb.bmp)
 
  **Original**  
 
-![**After**](https://raw.githubusercontent.com/nthu110061637/ESL_HomeWork1/main/hw1_1/build/GaussianBlur.bmp)
+![**After**](https://raw.githubusercontent.com/nthu110061637/ESL_HomeWork1/main/hw1_2/build/rowbuffer.bmp)
 
 **After**
 ## Conclusion
