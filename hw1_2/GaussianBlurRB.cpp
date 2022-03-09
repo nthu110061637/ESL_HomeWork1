@@ -11,6 +11,7 @@ GaussianBlurRB::GaussianBlurRB(sc_module_name n) : sc_module(n) {
 void GaussianBlurRB::row_buffer()
 {
   int count = 1 ;
+  /* initialize the row buffer */
   for(unsigned int i = 0 ; i < 3 ; ++i)
   {
     for(unsigned int j = 0 ; j < 258 ; ++j)
@@ -59,24 +60,17 @@ void GaussianBlurRB::do_filter(unsigned char array[3][258],int len)
     
     printf("call\n");
     printf("%d\n",len);
-    /*for(unsigned int a = 0 ; a  < 3 ; ++a) 
-    {
-      for(unsigned int b = 0 ; b < 258 ; ++b)
-      {
-        printf("%d  ",array[a][b]);
-      }
-        printf("\n");
-    }*/
+    /* do the entire row of convolution */
     for(int x = 1 ; x < len ; ++x)
     {
       for (unsigned int i = 0; i < MASK_N; ++i) { 
         val[i] = 0; // val[0]
       }
-      //printf("%d ",x);
+      
       for (unsigned int u = 0; u < MASK_X; ++u) 
       { //u,v are the filter size for row and col
         for (unsigned int v = 0; v < MASK_Y; ++v) 
-        { // line 22 23 go through the 9 pixel
+        { 
           for (unsigned int i = 0; i != MASK_N; ++i) 
           { // we only have one filter (mask) so can be ignore
             val[i] += array[u][x+v-1] * mask[i][u][v]; 
@@ -92,7 +86,4 @@ void GaussianBlurRB::do_filter(unsigned char array[3][258],int len)
       o_result[x-1].write(result);
     }
     printf("\n");
-    
-    
-    //wait(2); //emulate module delay
 }
