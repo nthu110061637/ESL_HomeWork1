@@ -86,7 +86,27 @@ sc_fifo_out<int> o_result [256];
 **In GaussianBlurRB.cpp (too long to show up the entire code)**
 
 - I use **“pixel”** array with the size of **[3][258]**. Using the number of 258 is to do padding.
-- And I push the second row to the first row and the third row to the second row then I read the next row of data through the testbench output fifo to the third row.
+- And I transmit the **entire row** through the fifo from testbnech to row buffer.
+- And I push the second row to the first row and the third row to the second row then I read the next row of data to the third row.
+```cpp
+/* GaussianBlurRB.cpp */
+/* the push row part */
+for(unsigned int a = 1 ; a  < 3 ; ++a) 
+{
+  for(unsigned int b = 1 ; b < 257 ; ++b)
+  {
+    pixel[a-1][b] = pixel[a][b];
+    //printf("%d  ",pixel[a-1][b]);
+  }
+    //printf("\n");
+}
+/* the read new row part*/
+for(unsigned int c = 1 ; c < 257 ; ++c)
+{
+  pixel[2][c] = (i_r[c-1].read() + i_g[c-1].read() +i_b[c-1].read()) / 3;
+  //printf("%d  ",pixel[2][c]);
+}
+```
 - If there’s two rows have been read into the “pixel” array (i.e. row buffer), the thread “row_buffer” will call the function “do_filter” to do the computation then return the result to testbench.
 - The data structure of **do_filter** is the picture below to multiply and add 9 pixels from row buffer and the Gaussian Blur mask.
 ```cpp
