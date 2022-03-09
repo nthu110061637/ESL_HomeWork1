@@ -59,7 +59,7 @@ const double mask[MASK_N][MASK_X][MASK_Y] = {{{0.0, 0.0, 0.0}, {0.0, 1.0, 0.0}, 
 
 ---
 
-![ **Original**  ](asset\origin.png)
+![ **Original**  ](https://raw.githubusercontent.com/nthu110061637/ESL_HomeWork1/main/hw1_1/build/origin.bmp)
 
  **Original**  
 
