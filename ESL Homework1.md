@@ -86,9 +86,25 @@ sc_fifo_out<int> o_result [256];
 **In GaussianBlurRB.cpp (too long to show up the entire code)**
 
 - I use **“pixel”** array with the size of **[3][258]**. Using the number of 258 is to do padding.
-- And I push the second row to the first row and the third row to the second row then I read the data through the testbench output fifo to the third row.
+- And I push the second row to the first row and the third row to the second row then I read the next row of data through the testbench output fifo to the third row.
 - If there’s two rows have been read into the “pixel” array (i.e. row buffer), the thread “row_buffer” will call the function “do_filter” to do the computation then return the result to testbench.
 - The data structure of **do_filter** is the picture below to multiply and add 9 pixels from row buffer and the Gaussian Blur mask.
+```cpp
+/* GaussianBlurRB.cpp */
+/* the convolution part */
+for (unsigned int u = 0; u < MASK_X; ++u) 
+{ //u,v are the filter size for row and col
+    for (unsigned int v = 0; v < MASK_Y; ++v) 
+    { // line 22 23 go through the 9 pixel
+      for (unsigned int i = 0; i != MASK_N; ++i) 
+      { // we only have one filter (mask) so can be ignore
+        val[i] += array[u][x+v-1] * mask[i][u][v]; 
+        printf("%lf  ",val[i]);
+      }
+    }
+}
+
+```
 ![ **Concept**  ](https://raw.githubusercontent.com/nthu110061637/ESL_HomeWork1/main/concept.jpg)
 ## Result : Part 2 - hw1_2
 
