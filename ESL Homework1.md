@@ -83,7 +83,7 @@ sc_fifo_out<int> o_result [256];
 /* use the wider fifo to send a whole row of pixel*/
 ```
 
-**In GaussianBlurRB.cpp (too long to show up)**
+**In GaussianBlurRB.cpp (too long to show up the entire code)**
 
 - I use **“pixel”** array with the size of **[3][258]**. Using the number of 258 is to do padding.
 - And I push the second row to the first row and the third row to the second row then I read the data through the testbench output fifo to the third row.
