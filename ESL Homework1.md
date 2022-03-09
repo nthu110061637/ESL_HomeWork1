@@ -55,7 +55,7 @@ const double mask[MASK_N][MASK_X][MASK_Y] = {{{0.0, 0.0, 0.0}, {0.0, 1.0, 0.0}, 
 /* This aims to do comparison with the picture after convolution with filter to see the effect of blur */
 ```
 
-## Result : Part 1 - hw1_1                                                                                ****
+## Result : Part 1 - hw1_1
 
 ---
 
